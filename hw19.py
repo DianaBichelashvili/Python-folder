@@ -43,6 +43,83 @@ def append(self, new_data):
             current_node = current_node.next #აქ ქერენთ ნოუდი არის ჰედი. მაგრამ დაბეჭდვის შემდეგ გახდება ნექსთი სანამ არ მივა ბოლო ელემენტზე
                                              #მანამ სანამ ვაილი არ გახდება ნანი
 
+      #ინდექსის ამოშლის მეთოდი 
+      def remove_at (self, index):
+          if index < 0 or self.head is None:
+              return
+          
+          if index == 0:
+              self.head = self.head.next    #ამ შემთხვევაში თუ ნოლის ტოლია ჰედი წაიშლება და მისი შემდეგი გახდება ჰედი, თუ ისიც ნოლის ტოლი არ იქნება
+              return
+          
+          current_node = self.head # ჰედი იმიტომ რომ პირველი ელემენტიდან იწყება შემოწმება
+          current_position=0 # რადგან პირველი ელემენტი ინდექსში ყოველთვის ნოლზე იმყოფება
+          while current_node is not None and current_position < index-1:
+              current_node = current_node.next
+              current_position += 1
+
+              #აქ სანამ იქნება კონკრეტულ ინდექსზე მანამდე ხორციელდება ვაილი. ეს ორი პირობა  უნდა შესრულდეს რომ ელემნეტის პოვნა განხოციელდეს
+              # იმ ობიექტის წინა ელემენტის ვარჩევთ ჯერ და შემდეგ მის მომდევნო ელემენტს ვშლით current_position += 1
+              # ქცემოთ ვუთითებთ შემდეგს რომლის წაშლაც გვინდა და ვწერთ რომ ეს შემდეგი გახდეს მისი მომდევნო ელემენტი
+
+              if current_node.next:
+                  current_node.next = current_node.next.next 
+
+        #Stack - push and pop
+     
+
+class Node:
+   def __init__(self, data=None):
+       self.data=data
+       self.next=None
+       
+
+class Stack:
+          def _init_ (self) #ჰედის მაგივრად აქ ტოპი არის გამოყენებული წინა შემთხვევისგან განსხვავებით
+               self.top_node=None
+               self.length=0
+
+        #აბრუნებს ცარიელია თუ არა 
+def is_empty(self):
+          return self.length==0
+
+#რა ინფორმაციის მოცულობაა შეყვანილი სტეკში განსაზღვრავს ეს მეთოდი
+def size (self):
+   return self.length
+  
+
+  # დამატების მეთოდი
+def push(self, data):
+            new_node = Node(data)
+            new_node.next = self.top
+            self.top = new_node
+
+# წაშლის მეთოდი
+
+
+def pop (self)
+     if not self.empty()
+     popped_item=self.top_node.data 
+     self.top = self.top.next 
+
+
+
+
+     # ეს ქვედა სწორე ლოგიკაა წაშლის?            
+
+def pop2(self):   
+     if self.is_empty():
+         print("Stack is empty")
+         return None
+     else:
+         popped_node = self.top
+         self.top = self.top.next
+         popped_node.next = None
+         self.length -= 1
+         return popped_node.data
+    
+
+
 
 
 
