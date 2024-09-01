@@ -65,6 +65,30 @@ def append(self, new_data):
               if current_node.next:
                   current_node.next = current_node.next.next 
 
+#value ამოშლის მეთოდi
+      def remove_at (self, value)
+          if value is not None:
+              return
+        
+          if self.head is None:
+              self.head = self.head.next    
+              return
+          
+          current_node = self.head
+
+          current_node= remove_at(current_node)
+          while current_node.next and current_node.next.data!= value:
+    
+              current_node = current_node.next
+      
+              if current_node.next:
+                 current_node.next= current_node.next.next
+        
+
+
+
+
+
         #Stack - push and pop
      
 
