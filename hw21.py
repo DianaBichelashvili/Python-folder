@@ -34,8 +34,8 @@ def serialize_movie (object):
 
 
 
-input_file = 'movies.json'
-with open(input_file, 'r') as file:
+movie_file = 'movies.json'
+with open(movie_file, 'r') as file:
     data = json.load(file)
 
 for movie in data['movies']:
@@ -48,6 +48,6 @@ for movie in data['movies']:
     elif movie['release_year'] == 2000:
         movie['genre'] = 'New_Century'
 
-with open(input_file, 'w') as file:
+with open(movie_file, 'w') as file:
     json.dump(data, file, indent=4. default=serialize_movie)
 
